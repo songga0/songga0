@@ -1,6 +1,7 @@
 ### GA YOUNG❤️‍
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=thdrkdud0307)](https://solved.ac/thdrkdud0307/)
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj={thdrkdud0307})](https://solved.ac/{thdrkdud0307})
 ![songga0's GitHub stats](https://github-readme-stats.vercel.app/api?username=songga0&show_icons=true&theme=omni)
 
 
