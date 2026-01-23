@@ -37,29 +37,11 @@
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: foal_prize_prediction_model
 
-# python manage.py shell -c " from prediction.models import *; from core.models import *; FoalPrizePredictionModel.objects.all().delete(); FoalRecommendPredictionModel.objects.all().delete(); FoalPrediction.objects.all().delete(); HorseEntryPerformance.objects.all().delete(); EntryPerformanceData.objects.all().delete(); RaceHorse.objects.all().delete(); KnicksFeatureValues.objects.all().delete(); PreferenceRecommendationStallion.objects.all().delete(); Owner.objects.all().delete(); OwnerMapping.objects.all().delete(); Horse.objects.all().delete(); OwnerHorseMap.objects.all().delete(); RelationSnapshot.objects.all().delete(); SearchSeason.objects.all().delete(); SeasonRelationMap.objects.all().delete(); Knicks.objects.all().delete(); KnicksRaw.objects.all().delete(); BreedingValue.objects.all().delete(); Report.objects.all().delete(); FileUploadLog.objects.all().delete(); EmailSendLog.objects.all().delete(); ReportGeneration.objects.all().delete(); print('데이터 삭제 완료') " 
-Traceback (most recent call last):
-  File "/app/manage.py", line 22, in <module>
-    main()
-  File "/app/manage.py", line 18, in main
-    execute_from_command_line(sys.argv)
-  File "/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
-    utility.execute()
-  File "/usr/local/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
-    self.fetch_command(subcommand).run_from_argv(self.argv)
-  File "/usr/local/lib/python3.12/site-packages/django/core/management/base.py", line 413, in run_from_argv
-    self.execute(*args, **cmd_options)
-  File "/usr/local/lib/python3.12/site-packages/django/core/management/base.py", line 459, in execute
-    output = self.handle(*args, **options)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/django/core/management/commands/shell.py", line 117, in handle
-    exec(options["command"], globals())
-  File "<string>", line 1
-    from prediction.models import *; from core.models import *; FoalPrizePredictionModel.objects.all().delete(); FoalRecommendPredictionModel.objects.all().delete(); FoalPrediction.objects.all().delete(); HorseEntryPerformance.objects.all().delete(); EntryPerformanceData.objects.all().delete(); RaceHorse.objects.all().delete(); KnicksFeatureValues.objects.all().delete(); PreferenceRecommendationStallion.objects.all().delete(); Owner.objects.all().delete(); OwnerMapping.objects.all().delete(); Horse.objects.all().delete(); OwnerHorseMap.objects.all().delete(); RelationSnapshot.objects.all().delete(); SearchSeason.objects.all().delete(); SeasonRelationMap.objects.all().delete(); Knicks.objects.all().delete(); KnicksRaw.objects.all().delete(); BreedingValue.objects.all().delete(); Report.objects.all().delete(); FileUploadLog.objects.all().delete(); EmailSendLog.objects.all().delete(); ReportGeneration.objects.all().delete(); print('데이터 삭제 완료') 
-IndentationError: unexpected indent'
 
-python manage.py shell -c "from prediction.models import *; from core.models import *; FoalPrizePredictionModel.objects.all().delete(); FoalRecommendPredictionModel.objects.all().delete(); FoalPrediction.objects.all().delete(); HorseEntryPerformance.objects.all().delete(); EntryPerformanceData.objects.all().delete(); RaceHorse.objects.all().delete(); KnicksFeatureValues.objects.all().delete(); PreferenceRecommendationStallion.objects.all().delete(); Owner.objects.all().delete(); OwnerMapping.objects.all().delete(); Horse.objects.all().delete(); OwnerHorseMap.objects.all().delete(); RelationSnapshot.objects.all().delete(); SearchSeason.objects.all().delete(); SeasonRelationMap.objects.all().delete(); Knicks.objects.all().delete(); KnicksRaw.objects.all().delete(); BreedingValue.objects.all().delete(); Report.objects.all().delete(); FileUploadLog.objects.all().delete(); EmailSendLog.objects.all().delete(); ReportGeneration.objects.all().delete(); print('데이터 삭제 완료')"
+
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-%23F9A825.svg?style=for-the-badge&logo=googlecolab&logoColor=white)
 
 ## Collaboration & Version Control Tools
