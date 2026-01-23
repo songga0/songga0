@@ -35,6 +35,36 @@
 ## Development Tools / Environment
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
+
+
+
+python manage.py shell -c "
+from prediction.models import *; 
+from core.models import *;
+FoalPrizePredictionModel.objects.all().delete();
+FoalRecommendPredictionModel.objects.all().delete();
+FoalPrediction.objects.all().delete();
+HorseEntryPerformance.objects.all().delete();
+EntryPerformanceData.objects.all().delete();
+RaceHorse.objects.all().delete();
+KnicksFeatureValues.objects.all().delete();
+PreferenceRecommendationStallion.objects.all().delete();
+Owner.objects.all().delete();
+OwnerMapping.objects.all().delete();
+Horse.objects.all().delete();
+OwnerHorseMap.objects.all().delete();
+RelationSnapshot.objects.all().delete();
+SearchSeason.objects.all().delete();
+SeasonRelationMap.objects.all().delete();
+Knicks.objects.all().delete();
+KnicksRaw.objects.all().delete();
+BreedingValue.objects.all().delete();
+Report.objects.all().delete();
+FileUploadLog.objects.all().delete();
+EmailSendLog.objects.all().delete();
+ReportGeneration.objects.all().delete();
+print('데이터 삭제 완료')
+"
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-%23F9A825.svg?style=for-the-badge&logo=googlecolab&logoColor=white)
 
 ## Collaboration & Version Control Tools
