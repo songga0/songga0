@@ -39,7 +39,66 @@
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 django.db.utils.OperationalError: no such table: foal_prize_prediction_model
+python manage.py shell << 'EOF'
+from django.db import connection
+from django.core.management.color import no_style
+from django.db import models
 
+# 데이터베이스에 존재하는 테이블 목록 가져오기
+cursor = connection.cursor()
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE 'django_%';")
+existing_tables = [row[0] for row in cursor.fetchall()]
+
+print(f"존재하는 테이블: {existing_tables}")
+
+# prediction 앱 테이블들
+prediction_tables = [
+    'foal_prize_prediction_model',
+    'foal_recommend_prediction_model',
+    'foal_prediction',
+    'horse_entry_performance',
+    'entry_performance_data',
+    'racehorse',
+    'knicks_feature_values',
+    'preference_recommendation_stallion'
+]
+
+# core 앱 테이블들
+core_tables = [
+    'owner',
+    'owner_mapping',
+    'horse',
+    'owner_horse_map',
+    'relation_snapshot',
+    'search_season',
+    'season_relation_map',
+    'knicks',
+    'knicks_raw',
+    'breeding_value',
+    'report',
+    'file_upload',
+    'email_send',
+    'report_generation'
+]
+
+# 존재하는 테이블만 삭제
+all_tables = prediction_tables + core_tables
+tables_to_delete = [t for t in all_tables if t in existing_tables]
+
+if tables_to_delete:
+    print(f"\n삭제할 테이블: {tables_to_delete}")
+    for table in tables_to_delete:
+        try:
+            cursor.execute(f"DELETE FROM {table};")
+            count = cursor.rowcount
+            print(f"  {table}: {count}개 행 삭제")
+        except Exception as e:
+            print(f"  {table}: 삭제 실패 - {e}")
+    connection.commit()
+    print("\n데이터 삭제 완료")
+else:
+    print("\n삭제할 테이블이 없습니다.")
+EOF
 
 
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-%23F9A825.svg?style=for-the-badge&logo=googlecolab&logoColor=white)
